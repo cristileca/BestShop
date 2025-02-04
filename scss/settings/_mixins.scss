@@ -15,3 +15,33 @@
     @content;
   }
 }
+
+@mixin statistic($bg-color, $image) {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+
+  &::after{
+      content: "";
+      position: absolute;
+      width: 4rem;
+      height: 4rem;
+      background-color: $bg-color;
+      border-radius: 50%;
+      right: 49.5%;
+      z-index: 1;
+  }
+
+
+  .img{
+      z-index: 2;
+      background-image:url($image);
+      background-position:center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 4rem;
+      width: 4rem;
+  }
+}
+

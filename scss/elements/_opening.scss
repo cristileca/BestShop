@@ -1,0 +1,53 @@
+@use "../settings/mixins" as *;
+@use "../settings/colors" as *;
+@use "../settings/fonts" as *;
+@use "./buttons" as *;
+
+.opening{
+    z-index: -3;
+    display: flex;
+    flex-direction: column;
+    .title{
+        margin-top: 5rem;
+        margin-bottom: 1.3rem;
+        text-align: center;
+        font-family: $font-raleway;
+        font-size: 2.5rem;
+        font-weight: 500;
+        }
+
+    p{
+        text-align: center;
+        padding: 0 3rem;
+        font-size: 1.24rem;
+        font-family: $font-open-sans;
+        color: #000000;
+    }
+
+    .btn{
+        @include button-styles($color-primary, $color-white);
+        max-width:25rem;
+    }
+
+    .laptop-png{
+        height: 30rem;
+        width: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("/assets/Background.png");
+    }
+
+    @include notebook{
+        .laptop-png{
+            height: 30rem;
+        }
+
+    }
+
+    @include mobile{
+        .laptop-png{
+            height: 18rem;
+        }
+    }
+}
