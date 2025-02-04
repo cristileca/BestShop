@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 3px 6px #00000029;
+  position: relative;
   
   .header-logo{
     font-size: 2rem;
@@ -17,7 +18,7 @@
     align-self: center;
   }
 
-   input{
+  input{
     display: none;
   }
 
@@ -56,61 +57,64 @@
 
   }
 
+
 @include mobile{
-        .navbar-mobile {
-            position: relative;
-            label {
-              color: $color-black;
-              font-size: 1.3em;
-              margin: .2em;
-              display: inline-block;
-              cursor: pointer;
-            }
-            ul {
-              display: none;
-            }
-            > input[type="checkbox"] {
-              display: none;
-              &:checked ~ ul{
-                display: block;
-                position: absolute;
-                background-color: $color-white;
-                width: 100vw;
-                padding: 2rem 0 ;
-                left: -85vw;
-                z-index: -1;
-                box-shadow: 0px 3px 6px #00000029;
+  .navbar-mobile {
+      position: relative;
+      label {
+        color: $color-black;
+        font-size: 1.3em;
+        margin: .2em;
+        display: inline-block;
+        cursor: pointer;
+      }
+      ul {
+        display: none;
+      }
+      > input[type="checkbox"] {
+        display: none;
+        &:checked ~ ul{
+          display: block;
+          position: absolute;
+          background-color: $color-white;
+          width: 100vw;
+          padding: 2rem 0 ;
+          left: -85vw;
+          z-index: -1;
+          box-shadow: 0px 3px 6px #00000029;
 
-        
-                li {
-                  padding: .3em 1.5rem; 
-                  text-align: left;
-                  list-style: none;
+  
+          li {
+            padding: .3em 1.5rem; 
+            text-align: left;
+            list-style: none;
 
-                  a {
-                    text-decoration: none;
-                    font-family: $font-open-sans;
-                    font-weight: bold;
-                    font-size: 15px;
-                    letter-spacing: 3.28px;
-                    color: #A5A5A5;
+            a {
+              text-decoration: none;
+              font-family: $font-open-sans;
+              font-weight: bold;
+              font-size: 15px;
+              letter-spacing: 3.28px;
+              color: #A5A5A5;
+              padding: 0;
 
-                    &:hover{
-                      color: $color-black;
-                    }
-                  }
-                }
-        
+              &:hover{
+                color: $color-black;
+                border-bottom: none;
               }
             }
-
-            .fa-bars{
-              display: block;
-                font-size: 1.6rem;
-                color: $color-primary;
-                padding:1rem 1rem
-            }
           }
+  
+        }
+      }
+
+      .fa-bars{
+        display: block;
+          font-size: 1.6rem;
+          color: $color-primary;
+          padding:1rem 1rem
+      }
     }
+}
 
 }

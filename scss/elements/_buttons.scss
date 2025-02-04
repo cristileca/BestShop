@@ -1,0 +1,19 @@
+@use "../settings/colors" as *;
+@use "..//settings/fonts" as *;
+
+@mixin button-styles($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 1.4rem 3rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    text-align: center;
+    width: 70%;
+    margin:3rem auto;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+    @content
+}
